@@ -27,8 +27,8 @@ pwm.set_pwm_freq(60)
 move_delay = 0.0005
 step_delay = 0.001
 
-leg1_offset = [-10,0,30]
-leg2_offset = [-15,7,10]
+leg1_offset = [-10,0,20]
+leg2_offset = [-15,7,0]
 leg3_offset = [0,0,0]
 leg4_offset = [20,0,0]
 
@@ -59,22 +59,20 @@ channel_cur = [90,90,90,90,90,90,90,90,90,90,90,90]
 def main():
     pinsetup()
     begin()
-    time.sleep(1)
+    #time.sleep(1)
 
 
-    ##turn_right()
     #turn_right()
     #turn_right()
     #turn_right()
+    #turn_right()
 
-    for x in range(0,5):
-        forward()
+    # for x in range(0,5):
+    #     forward()
 
-    for x in range(0,5):
-        turn_left()
+    # for x in range(0,15):
+    #     turn_left()
     
-    for x in range(0,5):
-        forward()
 
 
 
@@ -89,21 +87,21 @@ def pinsetup():
 def begin():
     global leg_formation
     #Move Left Side
-    #leg1(89,89,89) #leftside
-    #leg2(89,89,89)
+    leg1(89,89,89) #leftside
+    leg2(89,89,89)
 
-    #leg3(89,89,89)#rightside
-    #leg4(89,89,89)
+    leg3(89,89,89)#rightside
+    leg4(89,89,89)
 
     #time.sleep(2)
 
-    leg1(front_parallel,footdown,pincer_down) #leftside
-    leg2(back_parallel,footdown,pincer_down)
+    #leg1(front_parallel,footdown,pincer_down) #leftside
+    #leg2(back_parallel,footdown,pincer_down)
 
-    leg3(back_lateral,footdown,pincer_down)#rightside
-    leg4(front_lateral,footdown,pincer_down)
+    #leg3(back_lateral,footdown,pincer_down)#rightside
+    #leg4(front_lateral,footdown,pincer_down)
 
-    leg_formation = 1
+    #leg_formation = 1
     
 
 def forward():
