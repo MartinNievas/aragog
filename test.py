@@ -2,6 +2,7 @@ from __future__ import division
 import time
 import RPi.GPIO as GPIO
 from threading import Thread, Lock
+from config import *
 
 cur_angle_mutex = Lock()
 i2c_mutex = Lock()
@@ -24,35 +25,6 @@ servo_max = 600  # Max pulse length out of 4096
 
 pwm.set_pwm_freq(60)
 
-move_delay = 0.0005
-step_delay = 0.001
-
-leg1_offset = [-10,0,20]
-leg2_offset = [-15,7,0]
-leg3_offset = [0,0,0]
-leg4_offset = [20,0,0]
-
-front_lateral = 40
-front_parallel = 90
-front_lateral_add = -30
-
-back_lateral = 140
-back_parallel = 90
-back_lateral_add = 30
-
-footup = 0
-footdown = 60
-
-pincer_up = 130
-pincer_down = 120
-
-leg1_footdown = footdown
-leg2_footdown = footdown
-leg3_footdown = footdown
-leg4_footdown = footdown
-
-leg_formation = 0
-
 channel_cur = [90,90,90,90,90,90,90,90,90,90,90,90]
 
 
@@ -67,8 +39,8 @@ def main():
     #turn_right()
     #turn_right()
 
-    # for x in range(0,5):
-    #     forward()
+    for x in range(0,7):
+        forward()
 
     # for x in range(0,15):
     #     turn_left()
